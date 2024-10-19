@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import userRoutes from './routes/user.routes';
 import oauthRoutes from './routes/oauth.routes';
@@ -11,5 +11,10 @@ app.use(express.json());
 app.use('/api', userRoutes)
 app.use('/api', oauthRoutes)
 app.use('/api', chartRoutes)
+
+app.get('/hello', (req: Request, res: Response) => {
+  res.status(200).json('OK')
+});
+
 
 export default app;
