@@ -5,8 +5,8 @@ const prisma = new PrismaClient();
 async function main() {
   await prisma.user.createMany({
     data: [
-      { name: 'Alice', email: 'alice@example.com', access_level: 'admin', password: 'hashed_password_1' },
-      { name: 'Bob', email: 'bob@example.com', access_level: 'user', password: 'hashed_password_2' },
+      { name: 'Usuario padrao', email: 'usuariocomum@teste.com.br', access_level: 'USER', password: '123456' },
+      { name: 'Usuario admin', email: 'usuarioadm@teste.com.br', access_level: 'ADMIN', password: '123456' },
     ],
   });
 }
