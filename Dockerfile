@@ -15,11 +15,9 @@ COPY . .
 
 RUN rm -rf data
 
+
 # Install dependencies
 RUN npm install
-
-# Generate Prisma client
-RUN npx prisma generate
 
 # Expose port
 EXPOSE 3000
