@@ -1,6 +1,8 @@
 # TESTE-GLOBO-API
 
-## Aplicação Node.js Express com TypeScript e Prisma ORM
+## Link para a aplicação
+
+https://teste-globo-app-web.vercel.app/
 
 ## Visão Geral
 
