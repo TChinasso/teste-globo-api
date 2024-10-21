@@ -1,11 +1,11 @@
 import { PrismaClient, Prisma, User } from '@prisma/client';
 import { hashPassword } from '../utils/hashPassword';
-import jwt, { JwtPayload } from 'jsonwebtoken'
+import { decodeJwtUser } from '../utils/jwtUtils'
 const prisma = new PrismaClient();
 
 export const createUser = async (data: Prisma.UserCreateInput) => {
   data.password = await hashPassword(data.password);
-  
+
   return prisma.user.create({
     data,
   });
@@ -16,7 +16,7 @@ export const getAllUsers = async () => {
 };
 
 export const getMe = (token: string = '') => {
-  const user = jwt.decode(token) as UserDecodedJwtPayload | null
+  const user = decodeJwtUser(token)
   return prisma.user.findUnique({
     where: {
       email: user?.email
@@ -27,10 +27,7 @@ export const getMe = (token: string = '') => {
 
 export const patchUser = (id: number, user: Partial<User>) => {
   return prisma.user.update({
-    where: {id},
+    where: { id },
     data: user
   })
 }
-
-
-type UserDecodedJwtPayload = JwtPayload & User

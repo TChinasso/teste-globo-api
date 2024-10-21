@@ -5,9 +5,9 @@ import { authMiddleware } from '../middlewares/auth.middleware';
 const router = Router();
 
 
-router.post('/users', authMiddleware, createUserController);
-router.patch('/users/:id', authMiddleware, patchUserController);
-router.get('/users', authMiddleware, getUsersController);
-router.get('/users/me', authMiddleware, getMeController);
+router.post('/users', authMiddleware(['ADMIN']), createUserController);
+router.patch('/users/:id', authMiddleware(), patchUserController);
+router.get('/users', authMiddleware(), getUsersController);
+router.get('/users/me', authMiddleware(), getMeController);
 
 export default router;
