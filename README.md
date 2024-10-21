@@ -4,6 +4,16 @@
 
 https://teste-globo-app-web.vercel.app/
 
+## Usuários para teste
+
+ADMIN ->
+usuario: usuarioadm@teste.com
+senha: 123456
+
+COMUM ->
+usuario: usuariocomum@teste.com.br
+senha: 123456
+
 ## Link para o respositório globo-teste-app-web
 
 https://github.com/TChinasso/teste-globo-app-web
