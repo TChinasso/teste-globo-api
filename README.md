@@ -4,6 +4,10 @@
 
 https://teste-globo-app-web.vercel.app/
 
+## Link para o respositório globo-teste-app-web
+
+https://github.com/TChinasso/teste-globo-app-web
+
 ## Visão Geral
 
 Esta é uma aplicação Node.js construída com Express, TypeScript e Prisma ORM. Visando atender todos os requisitos listados no arquivo de requisitos para o teste.
